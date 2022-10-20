@@ -1,28 +1,31 @@
-Walker [] Eorzea = new Walker[7];
+PImage img;
+Scion [] Eorzea = new Scion[70];
 
 void setup()
 {
   size(500,500);
-  background(0);
-  for(int i = 0; i < 7; i++)
+  for(int i = 0; i < Eorzea.length; i++)
   {
-    Eorzea[i] = new Walker();
+    Eorzea[i] = new Scion();
   }
+  img = loadImage("rwb.png");
 }
 
 void draw()
 {
- for(int i = 0; i < 7; i++)
+ //background(0);
+ image(img,0,0);
+ for(int i = 0; i < Eorzea.length; i++)
  {
    Eorzea[i].show();
    Eorzea[i].walk();
  }
 }
 
-class Walker
+class Scion
 {
   int myX,myY;
-  Walker()
+  Scion()
   {
     myX = myY = 250;
   }
@@ -33,7 +36,12 @@ class Walker
   }
   void show()
   {
-    fill(255);
-    ellipse(myX,myY,30,30);
+    stroke(255,0,0);
+    strokeWeight(3);
+    noFill();
+    //fill(255, 0, 0);
+    ellipse(myX,myY,15,15);
+    line(myX,myY-12,myX,myY+12);
+    line(myX+12,myY,myX-12,myY);
   }
 }
