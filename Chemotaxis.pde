@@ -8,7 +8,7 @@ void setup()
   {
     Eorzea[i] = new Scion();
   }
-  img = loadImage("rwb.png");
+  img = loadImage("terrified.png");
 }
 
 void draw()
